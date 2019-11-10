@@ -62,6 +62,11 @@ class TranslateScreenViewController: UIViewController {
         translateTextView.layer.borderWidth = 0.5
     }
     
+    @IBAction func pushButton(_ sender: UIButton) {
+        let editVC = EditViewController()
+        present(editVC, animated: true, completion: nil)
+        
+    }
     @objc private func swap() {
         if currentTranslationType == .fromEnToRu {
             currentTranslationType = .fromRuToEn
