@@ -27,7 +27,7 @@ class TranslateScreenViewController: UIViewController {
     
     @IBOutlet weak var leftLanguageLabel: UILabel!
     @IBOutlet weak var rightLanguageLabel: UILabel!
-
+    
     private let scrollViewInsets: CGFloat = 45
     private var currentTranslationType: TranslateLanguage = .fromEnToRu
     private var presenter: TranslateScreenPresenterProtocol = TranslateScreenPresenter()
@@ -40,6 +40,7 @@ class TranslateScreenViewController: UIViewController {
     override func viewDidLoad() {
         setup()
         super.viewDidLoad()
+    
         // Do any additional setup after loading the view.
     }
     
@@ -63,10 +64,16 @@ class TranslateScreenViewController: UIViewController {
     }
     
     @IBAction func pushButton(_ sender: UIButton) {
-        let editVC = EditViewController()
-        present(editVC, animated: true, completion: nil)
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let gvc = storyboard.instantiateViewController(withIdentifier: "Kek")
+        
+//        let gvc = GroupSelectionViewController()
+        present(gvc, animated: true)
+
     }
+        
+
     @objc private func swap() {
         if currentTranslationType == .fromEnToRu {
             currentTranslationType = .fromRuToEn

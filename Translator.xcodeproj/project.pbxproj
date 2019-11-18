@@ -15,6 +15,10 @@
 		120879ED2371A37500ED8D2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120879EB2371A37500ED8D2C /* LaunchScreen.storyboard */; };
 		1239B4AE23730C4C006FE81E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1239B4AD23730C4C006FE81E /* Constants.swift */; };
 		1266B14323786C0400DB10FC /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1266B14223786C0400DB10FC /* EditViewController.swift */; };
+		12AC6E0623830D39002423CA /* GroupSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC6E0523830D39002423CA /* GroupSelectionViewController.swift */; };
+		12AC6E0923830DF8002423CA /* GroupSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC6E0723830DF8002423CA /* GroupSelectionTableViewCell.swift */; };
+		12AC6E0A23830DF8002423CA /* GroupSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12AC6E0823830DF8002423CA /* GroupSelectionTableViewCell.xib */; };
+		12AC6E0D238314A1002423CA /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC6E0C238314A1002423CA /* ModelManager.swift */; };
 		12BEB311237324DB00A90C0C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BEB310237324DB00A90C0C /* NetworkManager.swift */; };
 		12BEB313237342F400A90C0C /* TranslateScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BEB312237342F400A90C0C /* TranslateScreenPresenter.swift */; };
 		12BEB3152373430A00A90C0C /* TranslateScreenPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BEB3142373430A00A90C0C /* TranslateScreenPresenterProtocol.swift */; };
@@ -35,6 +39,10 @@
 		120879EE2371A37500ED8D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1239B4AD23730C4C006FE81E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1266B14223786C0400DB10FC /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		12AC6E0523830D39002423CA /* GroupSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionViewController.swift; sourceTree = "<group>"; };
+		12AC6E0723830DF8002423CA /* GroupSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		12AC6E0823830DF8002423CA /* GroupSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		12AC6E0C238314A1002423CA /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		12BEB310237324DB00A90C0C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		12BEB312237342F400A90C0C /* TranslateScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreenPresenter.swift; sourceTree = "<group>"; };
 		12BEB3142373430A00A90C0C /* TranslateScreenPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreenPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -92,6 +100,7 @@
 				12E3DA6223735107002BD8AA /* Views */,
 				1239B4AD23730C4C006FE81E /* Constants.swift */,
 				12BEB310237324DB00A90C0C /* NetworkManager.swift */,
+				12AC6E0C238314A1002423CA /* ModelManager.swift */,
 				12E3DA60237350C6002BD8AA /* Models.swift */,
 				120879E92371A37500ED8D2C /* Assets.xcassets */,
 				120879EB2371A37500ED8D2C /* LaunchScreen.storyboard */,
@@ -133,6 +142,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		12AC6E0B2383139A002423CA /* GroupSelection */ = {
+			isa = PBXGroup;
+			children = (
+				12AC6E0523830D39002423CA /* GroupSelectionViewController.swift */,
+				12AC6E0723830DF8002423CA /* GroupSelectionTableViewCell.swift */,
+				12AC6E0823830DF8002423CA /* GroupSelectionTableViewCell.xib */,
+			);
+			path = GroupSelection;
+			sourceTree = "<group>";
+		};
 		12E3DA6223735107002BD8AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +159,7 @@
 				120879E62371A37300ED8D2C /* Main.storyboard */,
 				12038B3023744F4C00608629 /* SavedTranslationsViewController.swift */,
 				1266B14223786C0400DB10FC /* EditViewController.swift */,
+				12AC6E0B2383139A002423CA /* GroupSelection */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +234,7 @@
 			files = (
 				120879ED2371A37500ED8D2C /* LaunchScreen.storyboard in Resources */,
 				120879EA2371A37500ED8D2C /* Assets.xcassets in Resources */,
+				12AC6E0A23830DF8002423CA /* GroupSelectionTableViewCell.xib in Resources */,
 				120879E82371A37300ED8D2C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,14 +290,17 @@
 			files = (
 				1266B14323786C0400DB10FC /* EditViewController.swift in Sources */,
 				12BEB313237342F400A90C0C /* TranslateScreenPresenter.swift in Sources */,
+				12AC6E0923830DF8002423CA /* GroupSelectionTableViewCell.swift in Sources */,
 				12BEB3152373430A00A90C0C /* TranslateScreenPresenterProtocol.swift in Sources */,
 				12BEB311237324DB00A90C0C /* NetworkManager.swift in Sources */,
 				12038B3123744F4C00608629 /* SavedTranslationsViewController.swift in Sources */,
 				12E3DA61237350C6002BD8AA /* Models.swift in Sources */,
 				120879E52371A37300ED8D2C /* TranslateScreenViewController.swift in Sources */,
+				12AC6E0D238314A1002423CA /* ModelManager.swift in Sources */,
 				120879E12371A37300ED8D2C /* AppDelegate.swift in Sources */,
 				12BEB3172373433A00A90C0C /* TranslateScreenProtocol.swift in Sources */,
 				1239B4AE23730C4C006FE81E /* Constants.swift in Sources */,
+				12AC6E0623830D39002423CA /* GroupSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
