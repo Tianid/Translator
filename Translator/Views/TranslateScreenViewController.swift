@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class TranslateScreenViewController: UIViewController {
 
+    
     @IBOutlet weak var switchLanguageButton: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -40,7 +42,11 @@ class TranslateScreenViewController: UIViewController {
     override func viewDidLoad() {
         setup()
         super.viewDidLoad()
-    
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        //MARK: send appDelegate for core data context (maybe change on simple context, not appDelegate)
+        ModelManager.shared.checkGeneralGroup(appDelegate: appDelegate)
+        ModelManager.shared.fetchAllGroups(appDelegate: appDelegate)
+//        ModelManager.shared.createBasicGroup(context: appDelegate.persistentContainer.viewContext)
         // Do any additional setup after loading the view.
     }
     
@@ -66,10 +72,10 @@ class TranslateScreenViewController: UIViewController {
     @IBAction func pushButton(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let gvc = storyboard.instantiateViewController(withIdentifier: "Kek")
-        
+        let gvc = storyboard.instantiateViewController(withIdentifier: "Kek") as? GroupSelectionViewController
+        gvc?.dataTuple = (english: inputTextTextView.text!, russian: translateTextView.text!)
 //        let gvc = GroupSelectionViewController()
-        present(gvc, animated: true)
+        present(gvc!, animated: true)
 
     }
         

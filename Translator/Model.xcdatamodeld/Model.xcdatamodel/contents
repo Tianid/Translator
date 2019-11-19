@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Groups" representedClassName="Groups" syncable="YES" codeGenerationType="class">
+        <attribute name="groupName" optional="YES" attributeType="String"/>
+        <relationship name="translate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Translate" inverseName="groups" inverseEntity="Translate"/>
+    </entity>
+    <entity name="Translate" representedClassName="Translate" syncable="YES" codeGenerationType="class">
+        <attribute name="english" optional="YES" attributeType="String"/>
+        <attribute name="russian" optional="YES" attributeType="String"/>
+        <relationship name="groups" maxCount="1" deletionRule="Nullify" destinationEntity="Groups" inverseName="translate" inverseEntity="Groups"/>
+    </entity>
+    <elements>
+        <element name="Groups" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Translate" positionX="189.7734375" positionY="-58.51171875" width="128" height="88"/>
+    </elements>
+</model>
